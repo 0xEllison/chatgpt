@@ -1,0 +1,52 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  form(action="")
+    input#message(type="text" name="message") 
+    button#btnSubmit(type="button") Submit
+    div#result
+  script(src="https://code.jquery.com/jquery-3.6.4.min.js") 
+  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js") 
+  script.
+    String.prototype.nl2br = function()
+    {
+      return this.replace(/\n/g, "<br/>");
+    }
+    $("#btnSubmit").click(async function(){
+      var lastResponseLength = false;
+      let txtMessage = $("#message").val();
+      var ajaxRequest = $.ajax({
+          type: 'post',
+          url: 'http://localhost:3000/sendMsg',
+          data: {"msg":txtMessage},
+          dataType: 'json',
+          processData: true,
+          xhrFields: {
+              // Getting on progress streaming response
+              onprogress: function(e)
+              {
+                  var response = e.currentTarget.response;
+                  let dataList = response.nl2br().split("<*>");
+                  //console.log();
+                  $("#result").html(dataList[dataList.length-2]);
+              }
+          }
+      });
+
+      // On completed
+      ajaxRequest.done(function(data)
+      {
+          console.log('Complete response = ');
+      });
+
+      // On failed
+      ajaxRequest.fail(function(error){
+          console.log('Error: ', error);
+      });
+
+      console.log('Request Sent');
+   
+
+    })
