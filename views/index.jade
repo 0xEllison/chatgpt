@@ -4,14 +4,18 @@ block content
   div.container
     div.row
       div.col-12
-        h1= title
-        p Welcome to #{title}
-        form(action="")
-          input#message(type="text" name="message") 
-          button#btnSubmit(type="button") Submit
+        div#result
     div.row
       div.col-12
-        div#result
+        h1= title
+        p Welcome to #{title}
+        form.sticky-bottom(action="")
+          //- input#message(type="text" name="message") 
+          //- button#btnSubmit(type="button") Submit
+          div.input-group.mb-3
+            input#message.form-control(type="text" class="form-control" placeholder="输入内容" aria-label="Recipient's username" aria-describedby="button-addon2")
+            button#btnSubmit.btn.btn-outline-secondary(type="button")提交
+    
   script(src="https://code.jquery.com/jquery-3.6.4.min.js")  
   script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")  
   script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js") 
