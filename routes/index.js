@@ -2,11 +2,16 @@ var express = require("express");
 var compression = require('compression')
 var router = express.Router();
 
-const apiKey = "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";
+const apiKey = "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";
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
   res.render("index", { title: "ChatGPT" });
+});
+
+/* GET home page. */
+router.get("/chat", function (req, res, next) {
+  res.render("chat", { title: "ChatGPT" });
 });
 
 /* GET home page. */

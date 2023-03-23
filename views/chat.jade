@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    .container
+        .row.justify-content-md-center
+            .col-8
+                .chat-container
+                    .chat-header
+                        h2 ChatGPT
+                    .chat-messages
+                        ul
+                            li.chat-message.in
+                                div.message-text Hi, how are you?
+                                div.message-date You
+                            li.chat-message.out
+                                div.message-text I'm fine. Thanks for asking.
+                                div.message-date ChatGPT
+    nav.navbar.bg-body-tertiary
+        form.container-fluid.d-flex(role="text").justify-content-md-center
+            .col-6
+                .input-group
+                    input.form-control.me-2(type="text" placeholder="输入内容" aria-label="输入内容")
+                    button.btn.btn-outline-success(type="button") 发送
