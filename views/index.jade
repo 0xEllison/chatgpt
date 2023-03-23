@@ -1,19 +1,26 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  form(action="")
-    input#message(type="text" name="message") 
-    button#btnSubmit(type="button") Submit
-    div#result
-  script(src="https://code.jquery.com/jquery-3.6.4.min.js") 
-  script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js") 
+  div.container
+    div.row
+      div.col-12
+        h1= title
+        p Welcome to #{title}
+        form(action="")
+          input#message(type="text" name="message") 
+          button#btnSubmit(type="button") Submit
+    div.row
+      div.col-12
+        div#result
+  script(src="https://code.jquery.com/jquery-3.6.4.min.js")  
+  script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")  
+  script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js") 
   script.
     String.prototype.nl2br = function()
     {
       return this.replace(/\n/g, "<br/>");
     }
+    
     $("#btnSubmit").click(async function(){
       var lastResponseLength = false;
       let txtMessage = $("#message").val();
@@ -27,10 +34,9 @@ block content
               // Getting on progress streaming response
               onprogress: function(e)
               {
-                  var response = e.currentTarget.response;
-                  let dataList = response.nl2br().split("<*>");
-                  //console.log();
-                  $("#result").html(dataList[dataList.length-2]);
+                  var response = marked.parse(e.currentTarget.response);
+                  
+                  $("#result").html(response);
               }
           }
       });
@@ -40,13 +46,9 @@ block content
       {
           console.log('Complete response = ');
       });
-
       // On failed
       ajaxRequest.fail(function(error){
           console.log('Error: ', error);
       });
-
-      console.log('Request Sent');
-   
 
     })

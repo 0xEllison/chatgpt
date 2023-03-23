@@ -1,8 +1,97 @@
+/* 设置字体 */
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",Arial,sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #fff;
 }
 
+/* 设置标题 */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 2.25em;
+  border-bottom: 1px solid #eee;
+}
+
+h2 {
+  font-size: 1.75em;
+  border-bottom: 1px solid #eee;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+h6 {
+  font-size: 0.9em;
+  color: #777;
+}
+
+/* 设置链接 */
 a {
-  color: #00B7FF;
+  color: #4e8cff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 设置列表 */
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+  line-height: 1.5;
+}
+
+/* 设置代码块 */
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 1em;
+  overflow: auto;
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+}
+
+code {
+  font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.2em 0.4em;
+}
+
+/* 设置引用 */
+blockquote {
+  margin: 0;
+  padding: 0 1em;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+/* 设置图片 */
+img {
+  max-width: 100%;
+  margin: 1em 0;
+  border-radius: 3px;
 }

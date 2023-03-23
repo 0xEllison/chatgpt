@@ -1,7 +1,8 @@
 var express = require("express");
+var compression = require('compression')
 var router = express.Router();
 
-const apiKey = "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";
+const apiKey = "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";
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
@@ -19,10 +20,14 @@ router.post("/sendMsg", async function (req, res, next) {
   // res.send(result.text);
   let dataList = [];
   res.setHeader("Content-type", "application/octet-stream");
+  let dataIndex = 0;
   const result = await chatGPTApi.sendMessage(req.body.msg, {
     // print the partial response as the AI is "typing"
     onProgress: (partialResponse) => {
-      res.write(partialResponse.text+"<*>");
+      let currenData = partialResponse.text.substring(dataIndex,partialResponse.text.length-1);
+      dataIndex = partialResponse.text.length-1;
+      res.write(currenData);
+      res.flush();
     },
   });
   res.end();
