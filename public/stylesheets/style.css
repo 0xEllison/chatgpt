@@ -9,7 +9,7 @@ body {
 
 /* 设置标题 */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 1.5em;
+  margin-top: 0.5em;
   margin-bottom: 0.5em;
   font-weight: bold;
   line-height: 1.2;
@@ -123,8 +123,8 @@ img {
 
 .chat-message .message-text {
   border-radius: 10px;
-  padding: 10px;
-  max-width: 70%;
+  padding: 5px;
+  max-width: 100%;
 }
 
 .chat-message.in .message-text {

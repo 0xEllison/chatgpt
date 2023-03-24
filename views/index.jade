@@ -14,25 +14,23 @@ block content
   //-           input#message.form-control(type="text" class="form-control" placeholder="输入内容" aria-label="Recipient's username" aria-describedby="button-addon2")
   //-           button#btnSubmit.btn.btn-outline-secondary(type="button") 提交
   .container
-      .row.justify-content-md-center
-          .col-lg-8.col-md-12
-              .chat-container
-                  .chat-header
-                      h2 #{title}
-                  .chat-messages
-                      ul
-                          li.chat-message.in
-                              div#ask.message-text Hi, how are you?
-                              div.message-date You
-                          li.chat-message.out
-                              div#answer.message-text I'm fine. Thanks for asking.
-                              div.message-date ChatGPT
+    .row.justify-content-md-center
+      .col-lg-8.col-md-12
+        .chat-container
+          .chat-header
+            h2 #{title}
+          .chat-messages
+            ul
+              li.chat-message.in
+                div#ask.message-text Hi, how are you?
+              li.chat-message.out
+                div#answer.message-text I'm fine. Thanks for asking.
   nav.navbar.fixed-bottom.bg-body-tertiary
-      form.container-fluid.d-flex(role="text",action="").justify-content-md-center
-          .col-6
-              .input-group
-                  input#message.form-control.me-2(type="text" placeholder="输入内容" aria-label="输入内容")
-                  button#btnSubmit.btn.btn-outline-success(type="button") 发送
+    form.container-fluid.d-flex(role="text",action="").justify-content-md-center
+      .col-sm-12.col.md.8
+        .input-group
+          input#message.form-control.me-2(type="text" placeholder="输入内容" aria-label="输入内容")
+          button#btnSubmit.btn.btn-outline-success(type="button") 发送
   script(src="https://code.jquery.com/jquery-3.6.4.min.js")  
   script(src="https://cdn.jsdelivr.net/npm/marked/marked.min.js")  
   script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js") 
