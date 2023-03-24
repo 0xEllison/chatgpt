@@ -2,7 +2,7 @@ var express = require("express");
 var compression = require('compression')
 var router = express.Router();
 
-const apiKey = "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";
+const apiKey = "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";
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
