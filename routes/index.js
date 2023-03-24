@@ -38,8 +38,8 @@ router.post("/", async function (req, res, next) {
       },
     });
   } catch (error) {
-    
-    res.write(error);
+    console.log(error);
+    res.write("erro try again");
     res.flush();
   }
   res.end();
