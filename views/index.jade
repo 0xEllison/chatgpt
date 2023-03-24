@@ -48,7 +48,7 @@ block content
       $("#ask").text(txtMessage);
       var ajaxRequest = $.ajax({
           type: 'post',
-          url: 'http://localhost:3000/sendMsg',
+          url: '/sendMsg',
           data: {"msg":txtMessage},
           dataType: 'json',
           processData: true,

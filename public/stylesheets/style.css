@@ -55,7 +55,7 @@ a:hover {
 /* 设置列表 */
 ul, ol {
   margin: 0;
-  padding: 0;
+  padding: 2;
 }
 
 li {
