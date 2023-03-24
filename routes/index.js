@@ -39,7 +39,7 @@ router.post("/", async function (req, res, next) {
     });
   } catch (error) {
     
-    res.write("erro try again");
+    res.write(error);
     res.flush();
   }
   res.end();
