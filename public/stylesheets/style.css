@@ -124,7 +124,6 @@ img {
 .chat-message .message-text {
   border-radius: 10px;
   padding: 10px;
-  max-width: 70%;
 }
 
 .chat-message.in .message-text {
